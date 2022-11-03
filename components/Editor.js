@@ -105,8 +105,10 @@ class Editor extends React.Component {
   ) => {
     const node = this.carbonNode.current
 
-    const width = node.offsetWidth * exportSize
-    const height = squared ? node.offsetWidth * exportSize : node.offsetHeight * exportSize
+    let zoomSize = prompt("enter zoom size.");
+    
+    const width = node.offsetWidth * exportSize * zoomSize
+    const height = squared ? node.offsetWidth * exportSize : node.offsetHeight * exportSize * zoomSize
 
     const config = {
       style: {
